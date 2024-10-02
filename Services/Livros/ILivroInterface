@@ -1,0 +1,16 @@
+using WebAPI8_Trainne.Dto.Autor;
+using WebAPI8_Trainne.Dto.Livro;
+using WebAPI8_Trainne.Models;
+
+namespace WebAPI8_Trainne.Services.Livro
+{
+    public interface ILivroInterface
+    {
+        Task<ResponseModel<List<LivroModel>>> ListarLivros();
+        Task<ResponseModel<List<LivroModel>>> BuscarLivroPorId(int idLivro);
+        Task<ResponseModel<LivroModel>> BuscarLivroPorIdAutor(int idAutor);
+        Task<ResponseModel<List<LivroModel>>> CriarLivro(LivroCriacaoDto livro);
+        Task<ResponseModel<List<LivroModel>>> EditarLivro(LivroEdicaoDto livroEdicaoDto);
+        Task<ResponseModel<List<LivroModel>>> ExcluiLivro(int idLivro);
+    }
+}
